@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProvinciesBL.Model.Gemeente">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABAAAAAwAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Gemeente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="straten" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ProvinciesBL.Model.Provincie">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAEAAAAAAAIAAAACAA=</HashCode>
+      <FileName>Model\Provincie.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="gemeentes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ProvinciesBL.Model.Straat">
+    <Position X="2.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Straat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

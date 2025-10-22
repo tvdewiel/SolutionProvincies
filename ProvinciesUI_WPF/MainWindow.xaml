@@ -1,0 +1,27 @@
+﻿<Window x:Class="ProvinciesUI_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProvinciesUI_WPF"
+        mc:Ignorable="d"
+        Title="Upload Zip to Database" Height="250" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="0" Grid.Row="0" Content="ZipFile" Margin="5" Click="ButtonZipFile_Click"/>
+        <TextBox Grid.Column="1" Grid.Row="0" Name="TextBoxZipFile" Margin="5"/>
+        <ListBox Grid.Column="0" Grid.Row="1" Name="ListBoxZipFiles" Grid.ColumnSpan="2" Margin="5"/>
+        <Button Grid.Column="0" Grid.Row="2" Content="Output Folder" Margin="5" Click="ButtonOutputFolder_Click"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Name="TextBoxOutputFolder"  Margin="5"/>
+        <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Content="Upload To Database" Margin="5"/>
+    </Grid>
+</Window>

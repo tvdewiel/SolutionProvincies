@@ -3,6 +3,7 @@ using ProvinciesBL.Model;
 using ProvinciesDL_File.Model;
 using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,6 +107,13 @@ namespace ProvinciesDL_File
                 }
             }
             return Converteer(provincies.Values.ToList());
+        }
+        public List<string> GeefInhoudZip(string fileName)
+        {
+            using (var zipFile = ZipFile.OpenRead(fileName))
+            {
+                return zipFile.Entries.Select(x=>x.FullName).ToList();
+            }
         }
     }
 }

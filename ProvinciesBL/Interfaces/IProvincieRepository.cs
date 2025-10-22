@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProvinciesBL.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace ProvinciesBL.Interfaces
 {
     public interface IProvincieRepository
     {
+        void UploadToDatabase(List<Provincie> data);
     }
 }

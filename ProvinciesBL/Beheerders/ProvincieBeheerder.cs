@@ -18,12 +18,17 @@ namespace ProvinciesBL.Beheerders
             this.bestandslezer = bestandslezer;
         }
 
+        public List<string> GeefInhoudZip(string fileName)
+        {
+            return bestandslezer.GeefInhoudZip(fileName);
+        }
+
         public void UploadNaarDatabank(string folder, List<string> bestandsnamen)
         {
             //stap 1 lezen bestanden
             var data=bestandslezer.LeesBestanden(folder, bestandsnamen);
             //stap 2 schrijven naar databank
-
+            repo.UploadToDatabase(data);
         }
     }
 }

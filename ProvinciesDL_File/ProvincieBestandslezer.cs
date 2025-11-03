@@ -115,5 +115,30 @@ namespace ProvinciesDL_File
                 return zipFile.Entries.Select(x=>x.FullName).ToList();
             }
         }
+
+        public bool IsFolderEmpty(string folderName)
+        {
+            DirectoryInfo di=new DirectoryInfo(folderName);
+            return (di.GetFiles().Length==0 && di.GetDirectories().Length==0);
+        }
+
+        public void CleanFolder(string folderName)
+        {
+            DirectoryInfo di = new DirectoryInfo(folderName);
+            foreach (FileInfo fi in di.GetFiles())
+            {
+                fi.Delete();
+            }
+            foreach(DirectoryInfo i in di.GetDirectories())
+            {
+                CleanFolder(i.FullName);
+                i.Delete();
+            }
+        }
+
+        public void Unzip(string zipFile, string outputFolder)
+        {
+           ZipFile.ExtractToDirectory(zipFile, outputFolder);
+        }
     }
 }

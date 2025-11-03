@@ -75,8 +75,24 @@ namespace ProvinciesUI_WPF
             bool? result = folderDialog.ShowDialog();
             if (result == true && !string.IsNullOrWhiteSpace(folderDialog.FolderName))
             {
+                if (!provincieBeheerder.IsFolderEmpty(folderDialog.FolderName))
+                {
+                    if (MessageBox.Show("Clean folder ?","Folder",MessageBoxButton.YesNo,MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        //leeg maken
+                        provincieBeheerder.ClearFolder(folderDialog.FolderName);
+                    }
+                }
                 TextBoxOutputFolder.Text = folderDialog.FolderName;
             }
+        }
+
+        private void ButtonUpload_Click(object sender, RoutedEventArgs e)
+        {
+            provincieBeheerder.UnZip(TextBoxZipFile.Text,TextBoxOutputFolder.Text);
+            var stats=provincieBeheerder.UploadNaarDatabank(TextBoxOutputFolder.Text, bestandsnamen);
+            StatistiekenWindow w=new StatistiekenWindow(stats,TextBoxZipFile.Text);
+            w.ShowDialog();
         }
     }
 }
